@@ -1,0 +1,188 @@
+Hello World Souffle.
+
+This recipe prints the immortal words "Hello world!", in a basically
+brute force way. It also makes a lot of food for one person.
+
+Ingredients.
+0 interessenten
+0 hoehe
+0 breite
+11 maxInteressentenZ
+10 maxInteressentenN
+0 spaltenanzahl
+1 zeilenanzahl
+1 checker
+1 one
+0 spalten
+0 zeilen
+1 verhaeltnisZ
+0 verhaeltnisN
+0 nVerhaeltnisZ
+0 nVerhaeltnisN
+0 boolean
+0 zero
+
+Method.
+Take interessenten from refrigerator.
+Take hoehe from refrigerator.
+Take breite from refrigerator.
+Put interessenten into the mixing bowl.
+Combine maxInteressentenZ into the mixing bowl.
+Fold maxInteressentenZ into the mixing bowl.
+Verba checker.
+    Put spaltenanzahl into the 2nd mixing bowl.
+    Add one to the 2nd mixing bowl.
+    Fold spaltenanzahl into the 2nd mixing bowl.
+        Put zero into 2nd mixing bowl.
+        Fold zeilenanzahl into 2nd mixing bowl.
+        Verbb checker.
+            Put zeilenanzahl into 2nd mixing bowl.
+            Add one to 2nd mixing bowl.
+            Fold zeilenanzahl into 2nd mixing bowl.
+            Put zeilenanzahl into mixing bowl.
+            Combine spaltenanzahl into mixing bowl.
+            Put interessenten into mixing bowl.
+            Serve with isSmaller.
+            Fold checker into mixing bowl.
+            Clean mixing bowl.
+        Verbb until verbbed.
+        Put zeilenanzahl into mixing bowl.
+        Combine spaltenanzahl into mixing bowl.
+        Combine maxInteressentenN into mixing bowl.
+        Put maxInteressentenZ into mixing bowl.
+        Serve with isSmaller.
+        Fold checker into mixing bowl.
+        Clean mixing bowl.
+        Verbc checker.
+                Put hoehe into mixing bowl.
+                Combine spaltenanzahl into mixing bowl.
+                Put breite into mixing bowl.
+                Combine zeilenanzahl into mixing bowl.
+                Serve with max.
+                Fold nVerhaeltnisZ into mixing bowl.
+                Serve with min.
+                Fold nVerhaeltnisN into mixing bowl.
+                Clean mixing bowl.
+                Put nVerhaeltnisZ into 4th mixing bowl.
+                Divide nVerhaeltnisN into 4th mixing bowl.
+                Put nVerhaeltnisZ into mixing bowl.
+                Combine verhaeltnisN into mixing bowl.
+                Fold haha into mixing bowl.
+                Put nVerhaeltnisN into mixing bowl.
+                Combine verhaeltnisZ into mixing bowl.
+                Serve with isSmaller.
+                Fold boolean into mixing bowl.
+                Clean mixing bowl.
+                Verbd boolean.
+                    Put spaltenanzahl into mixing bowl.
+                    Fold spalten into mixing bowl.
+                    Put zeilenanzahl into mixing bowl.
+                    Fold zeilen into mixing bowl.
+                    Put nVerhaeltnisZ into mixing bowl.
+                    Fold verhaeltnisZ into mixing bowl.
+                    Put nVerhaeltnisN into mixing bowl.
+                    Fold verhaeltnisN into mixing bowl.
+                Verbd boolean until verbded.
+            Put zeilenanzahl into 2nd mixing bowl.
+            Add one to 2nd mixing bowl.
+            Fold zeilenanzahl into 2nd mixing bowl.
+            Put zeilenanzahl into mixing bowl.
+            Combine spaltenanzahl into mixing bowl.
+            Combine maxInteressentenN into mixing bowl.
+            Put maxInteressentenZ into mixing bowl.
+            Serve with isSmaller.
+            Fold checker into mixing bowl.
+            Clean mixing bowl.
+        Verbc until verbced.
+    Put spaltenanzahl into the mixing bowl.
+    Combine maxInteressentenN into the mixing bowl.
+    Put maxInteressentenZ into the mixing bowl.
+    Serve with isSmaller.
+    Fold checker into the mixing bowl.
+    Clean the mixing bowl.
+Verba until verbaed.
+Put spalten into mixing bowl.
+Put zeilen into mixing bowl.
+Pour contents of the mixing bowl into the baking dish.
+
+Serves 1.
+
+
+
+isSmaller.
+
+Input: a and b natural numbers
+Output: 1 if a < b else 0
+
+Ingredients.
+0 zero
+1 checker
+1 one
+0 a
+0 b
+
+Method.
+Fold b into the mixing bowl.
+Fold a into the mixing bowl.
+Put b into the mixing bowl.
+Combine a into the mixing bowl.
+Fold checker into the mixing bowl.
+Put a into the mixing bowl.
+Put b into the mixing bowl.
+Verb checker.
+Remove one from the mixing bowl.
+Stir the mixing bowl for 1 minutes.
+Remove one from the mixing bowl.
+Stir the mixing bowl for 1 minutes.
+Fold b into the mixing bowl.
+Fold a into the mixing bowl.
+Put b into the mixing bowl.
+Combine a into the mixing bowl.
+Fold checker into the mixing bowl.
+Put a into the mixing bowl.
+Put b into the mixing bowl.
+Verb until verbed.
+Clean the mixing bowl.
+Put zero into the mixing bowl.
+Verb b.
+Fold b into the mixing bowl.
+Put one into the mixing bowl.
+Verb until verbed.
+
+Serves 1.
+
+
+
+max.
+
+Ingredients.
+0 bool
+0 zero
+
+Method.
+Serve with isSmaller.
+Fold bool into mixing bowl.
+Verb bool.
+    Stir the mixing bowl for 1 minutes.
+Verb bool until verbed.
+Fold bool into the mixing bowl.
+
+Serves 1.
+
+
+min.
+
+Ingredients.
+0 bool
+0 zero
+
+Method.
+Serve with isSmaller.
+Fold bool into mixing bowl.
+Verb bool.
+    Stir the mixing bowl for 1 minutes.
+Verb bool until verbed.
+Stir the mixing bowl for 1 minutes.
+Fold bool into the mixing bowl.
+
+Serves 1.

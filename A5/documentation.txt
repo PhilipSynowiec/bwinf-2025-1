@@ -1,0 +1,238 @@
+
+\documentclass[a4paper,10pt,ngerman]{scrartcl}
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[a4paper,margin=2.5cm,footskip=0.5cm]{geometry}
+
+\newcommand{\Aufgabe}{Aufgabe 5: Das ägyptische Grabmal}
+\newcommand{\TeamId}{00285}
+\newcommand{\TeamName}{Nebuchadnezzar}
+\newcommand{\Namen}{Philip Synowiec}
+
+\usepackage{scrlayer-scrpage, lastpage}
+\setkomafont{pageheadfoot}{\large\textrm}
+\lohead{\Aufgabe}
+\rohead{Team-ID: \TeamId}
+\cfoot*{\thepage{}/\pageref{LastPage}}
+
+\usepackage{titling}
+\setlength{\droptitle}{-1.0cm}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{
+  keywordstyle=\color{blue},commentstyle=\color{mygreen},
+  stringstyle=\color{mymauve},rulecolor=\color{black},
+  basicstyle=\footnotesize\ttfamily,numberstyle=\tiny\color{mygray},
+  captionpos=b,
+  keepspaces=true,
+  numbers=left, numbersep=5pt, showspaces=false,showstringspaces=true,
+  showtabs=false, stepnumber=1, tabsize=2, title=\lstname,
+  breaklines=true,
+  extendedchars=true,
+  literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {ß}{{\ss}}1
+}
+
+\usepackage{cleveref}
+
+\title{\textbf{\Huge\Aufgabe}}
+\author{\LARGE Team-ID: \LARGE \TeamId \\\\
+    \LARGE Team-Name: \LARGE \TeamName \\\\
+    \LARGE Bearbeiter dieser Aufgabe:\\
+    \LARGE \Namen\\\\}
+\date{\LARGE\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\vspace{0.5cm}
+
+\section{Lösungsidee}
+
+Dokumentiere hier deine Lösungsidee.
+
+\section{Umsetzung}
+
+Dokumentiere hier deine Umsetzung.
+
+\section{Beispiele}
+
+Wir führen das Programm für die folgenden Dateien aus.
+
+
+\subsection*{in/grabmal0.txt}
+\begin{lstlisting}
+Warte 5 Minuten, laufe in Abschnitt 1.
+Warte 3 Minuten, laufe in Abschnitt 2.
+Warte 4 Minuten, laufe zum Grabmal.
+\end{lstlisting}
+
+\subsection*{in/grabmal1.txt}
+\begin{lstlisting}
+Warte 17 Minuten, laufe in Abschnitt 2.
+Warte 4 Minuten, laufe in Abschnitt 3.
+Warte 6 Minuten, laufe in Abschnitt 4.
+Warte 8 Minuten, laufe in Abschnitt 3.
+Warte 4 Minuten, laufe in Abschnitt 2.
+Warte 10 Minuten, laufe zum Grabmal.
+\end{lstlisting}
+
+\subsection*{in/grabmal2.txt}
+\begin{lstlisting}
+Warte 170000 Minuten, laufe in Abschnitt 2.
+Warte 40009 Minuten, laufe in Abschnitt 3.
+Warte 59991 Minuten, laufe in Abschnitt 4.
+Warte 80015 Minuten, laufe in Abschnitt 3.
+Warte 39985 Minuten, laufe in Abschnitt 2.
+Warte 100021 Minuten, laufe zum Grabmal.
+\end{lstlisting}
+
+\subsection*{in/grabmal3.txt}
+\begin{lstlisting}
+Warte 20 Minuten, laufe in Abschnitt 1.
+Warte 2 Minuten, laufe in Abschnitt 6.
+Warte 13 Minuten, laufe zum Grabmal.
+\end{lstlisting}
+
+\subsection*{in/grabmal4.txt}
+\begin{lstlisting}
+Warte 3242835 Minuten, laufe in Abschnitt 1.
+Warte 60360 Minuten, laufe in Abschnitt 2.
+Warte 360 Minuten, laufe in Abschnitt 5.
+Warte 37695 Minuten, laufe in Abschnitt 6.
+Warte 51407 Minuten, laufe in Abschnitt 8.
+Warte 36216 Minuten, laufe in Abschnitt 9.
+Warte 4024 Minuten, laufe zum Grabmal.
+\end{lstlisting}
+
+\subsection*{in/grabmal5.txt}
+\begin{lstlisting}
+Warte 43838148 Minuten, laufe in Abschnitt 1.
+Warte 45 Minuten, laufe in Abschnitt 5.
+Warte 4542 Minuten, laufe in Abschnitt 6.
+Warte 6752 Minuten, laufe in Abschnitt 7.
+Warte 1452 Minuten, laufe in Abschnitt 8.
+Warte 3576 Minuten, laufe in Abschnitt 9.
+Warte 281 Minuten, laufe in Abschnitt 14.
+Warte 5969 Minuten, laufe in Abschnitt 17.
+Warte 2246 Minuten, laufe in Abschnitt 18.
+Warte 2629 Minuten, laufe in Abschnitt 19.
+Warte 1120 Minuten, laufe in Abschnitt 21.
+Warte 2408 Minuten, laufe in Abschnitt 22.
+Warte 5247 Minuten, laufe in Abschnitt 23.
+Warte 1620 Minuten, laufe in Abschnitt 24.
+Warte 825 Minuten, laufe in Abschnitt 25.
+Warte 3438 Minuten, laufe in Abschnitt 27.
+Warte 1034 Minuten, laufe in Abschnitt 28.
+Warte 349 Minuten, laufe in Abschnitt 32.
+Warte 1694 Minuten, laufe in Abschnitt 34.
+Warte 2894 Minuten, laufe in Abschnitt 35.
+Warte 4867 Minuten, laufe in Abschnitt 36.
+Warte 70 Minuten, laufe in Abschnitt 39.
+Warte 1706 Minuten, laufe in Abschnitt 43.
+Warte 204 Minuten, laufe in Abschnitt 45.
+Warte 859 Minuten, laufe in Abschnitt 46.
+Warte 195 Minuten, laufe in Abschnitt 47.
+Warte 2040 Minuten, laufe in Abschnitt 48.
+Warte 1751 Minuten, laufe in Abschnitt 49.
+Warte 4079 Minuten, laufe in Abschnitt 50.
+Warte 1257 Minuten, laufe in Abschnitt 51.
+Warte 731 Minuten, laufe in Abschnitt 52.
+Warte 1001 Minuten, laufe in Abschnitt 53.
+Warte 4342 Minuten, laufe in Abschnitt 54.
+Warte 1332 Minuten, laufe in Abschnitt 55.
+Warte 4533 Minuten, laufe in Abschnitt 56.
+Warte 3474 Minuten, laufe in Abschnitt 57.
+Warte 113 Minuten, laufe in Abschnitt 59.
+Warte 2935 Minuten, laufe in Abschnitt 61.
+Warte 1112 Minuten, laufe in Abschnitt 62.
+Warte 289 Minuten, laufe in Abschnitt 63.
+Warte 3931 Minuten, laufe in Abschnitt 64.
+Warte 704 Minuten, laufe in Abschnitt 68.
+Warte 481 Minuten, laufe in Abschnitt 69.
+Warte 4319 Minuten, laufe in Abschnitt 71.
+Warte 5643 Minuten, laufe in Abschnitt 72.
+Warte 3633 Minuten, laufe in Abschnitt 73.
+Warte 413 Minuten, laufe in Abschnitt 74.
+Warte 4375 Minuten, laufe in Abschnitt 73.
+Warte 617 Minuten, laufe in Abschnitt 72.
+Warte 1906 Minuten, laufe in Abschnitt 71.
+Warte 7132 Minuten, laufe in Abschnitt 72.
+Warte 3113 Minuten, laufe in Abschnitt 73.
+Warte 651 Minuten, laufe in Abschnitt 74.
+Warte 792 Minuten, laufe in Abschnitt 80.
+Warte 2414 Minuten, laufe in Abschnitt 81.
+Warte 1222 Minuten, laufe in Abschnitt 82.
+Warte 1485 Minuten, laufe zum Grabmal.
+\end{lstlisting}
+
+\section{Quellcode}
+
+\lstset{language=Python}
+\begin{lstlisting}
+def lese_eingabe(pfad: str) -> list[int]:
+    with open(pfad, "r") as f:
+        return [int(f.readline()) for _ in range(int(f.readline()))]
+
+
+def formatiere_ausgabe(daten: list[tuple]) -> str:
+    return '.\n'.join([f"Warte {daten[i][0] - daten[i-1][0]} Minuten, laufe " + ("zum Grabmal." if i == len(daten)-1 else f"in Abschnitt {daten[i][1]+1}") for i in range(1, len(daten))])
+
+
+def wurde_abschnitt_veraendert(abschnitt: int, zeit: int, naechste_aenderungszeiten: list[int]) -> bool:
+    return naechste_aenderungszeiten[abschnitt] == zeit
+
+
+def wurde_abschnitt_geschlossen(abschnitt: int, zeit: int, perioden: list[int]) -> bool:
+    return zeit % (2 * perioden[abschnitt]) == 0
+
+
+def main(pfad: str) -> str:
+    perioden = lese_eingabe(pfad)
+    naechste_aenderungszeiten = perioden.copy()
+    moegliche_abschnitte = {-1}
+    offene_aber_unmoegliche_abschnitte = {len(perioden)}
+    abschnitt_zu_weg = [[] for _ in range(len(perioden)+1)] + [[(0, -1)]]
+
+    while len(perioden) not in moegliche_abschnitte:
+        zeit = min(naechste_aenderungszeiten)
+
+        for abschnitt in range(len(perioden)):
+            if wurde_abschnitt_veraendert(abschnitt, zeit, naechste_aenderungszeiten):
+                naechste_aenderungszeiten[abschnitt] += perioden[abschnitt]
+
+                if wurde_abschnitt_geschlossen(abschnitt, zeit, perioden):
+                    offene_aber_unmoegliche_abschnitte.discard(abschnitt)
+                    moegliche_abschnitte.discard(abschnitt)
+                    abschnitt_zu_weg[abschnitt] = []
+                else:
+                    offene_aber_unmoegliche_abschnitte.add(abschnitt)
+
+        for abschnitt in list(moegliche_abschnitte):
+            for richtung in [-1, 1]:
+                neuer_abschnitt = abschnitt + richtung
+                while neuer_abschnitt in offene_aber_unmoegliche_abschnitte:
+                    moegliche_abschnitte.add(neuer_abschnitt)
+                    offene_aber_unmoegliche_abschnitte.remove(neuer_abschnitt)
+                    abschnitt_zu_weg[neuer_abschnitt] = abschnitt_zu_weg[abschnitt] + [(zeit, neuer_abschnitt)]
+                    neuer_abschnitt += richtung
+
+    return formatiere_ausgabe(abschnitt_zu_weg[len(perioden)])
+
+
+if __name__ == "__main__":
+    print(main(input("Pfad zur .txt Datei: ")))
+\end{lstlisting}
+
+\end{document}
+        

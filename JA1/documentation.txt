@@ -1,0 +1,143 @@
+
+\documentclass[a4paper,10pt,ngerman]{scrartcl}
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[a4paper,margin=2.5cm,footskip=0.5cm]{geometry}
+
+\newcommand{\Aufgabe}{Junioraufgabe 1: Quadratisch, praktisch, grün}
+\newcommand{\TeamId}{00285}
+\newcommand{\TeamName}{Nebuchadnezzar}
+\newcommand{\Namen}{Philip Synowiec}
+
+\usepackage{scrlayer-scrpage, lastpage}
+\setkomafont{pageheadfoot}{\large\textrm}
+\lohead{\Aufgabe}
+\rohead{Team-ID: \TeamId}
+\cfoot*{\thepage{}/\pageref{LastPage}}
+
+\usepackage{titling}
+\setlength{\droptitle}{-1.0cm}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{
+  keywordstyle=\color{blue},commentstyle=\color{mygreen},
+  stringstyle=\color{mymauve},rulecolor=\color{black},
+  basicstyle=\footnotesize\ttfamily,numberstyle=\tiny\color{mygray},
+  captionpos=b,
+  keepspaces=true,
+  numbers=left, numbersep=5pt, showspaces=false,showstringspaces=true,
+  showtabs=false, stepnumber=1, tabsize=2, title=\lstname,
+  breaklines=true,
+  extendedchars=true,
+  literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {ß}{{\ss}}1
+}
+
+\usepackage{cleveref}
+
+\title{\textbf{\Huge\Aufgabe}}
+\author{\LARGE Team-ID: \LARGE \TeamId \\\\
+    \LARGE Team-Name: \LARGE \TeamName \\\\
+    \LARGE Bearbeiter dieser Aufgabe:\\
+    \LARGE \Namen\\\\}
+\date{\LARGE\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\vspace{0.5cm}
+
+\section{Lösungsidee}
+
+Dokumentiere hier deine Lösungsidee.
+
+\section{Umsetzung}
+
+Dokumentiere hier deine Umsetzung.
+
+\section{Beispiele}
+
+Wir führen das Programm für die folgenden Dateien aus.
+
+
+\subsection*{in/garten0.txt}
+\begin{lstlisting}
+Das Feld sollte gleichmäßig in 6 Spalten und 4 Zeilen aufgeteilt werden.
+\end{lstlisting}
+
+\subsection*{in/garten1.txt}
+\begin{lstlisting}
+Das Feld sollte gleichmäßig in 4 Spalten und 5 Zeilen aufgeteilt werden.
+\end{lstlisting}
+
+\subsection*{in/garten2.txt}
+\begin{lstlisting}
+Das Feld sollte gleichmäßig in 6 Spalten und 6 Zeilen aufgeteilt werden.
+\end{lstlisting}
+
+\subsection*{in/garten3.txt}
+\begin{lstlisting}
+Das Feld sollte gleichmäßig in 10 Spalten und 11 Zeilen aufgeteilt werden.
+\end{lstlisting}
+
+\subsection*{in/garten4.txt}
+\begin{lstlisting}
+Das Feld sollte gleichmäßig in 264 Spalten und 5 Zeilen aufgeteilt werden.
+\end{lstlisting}
+
+\subsection*{in/garten5.txt}
+\begin{lstlisting}
+Das Feld sollte gleichmäßig in 308 Spalten und 120 Zeilen aufgeteilt werden.
+\end{lstlisting}
+
+\section{Quellcode}
+
+\lstset{language=Python}
+\begin{lstlisting}
+from math import floor, ceil
+
+
+def lies_eingabe(pfad: str) -> tuple[int, int, int]:
+    with open(pfad, 'r') as f:
+        interessenten, hoehe, breite = map(int, [f.readline() for _ in range(3)])
+        return interessenten, hoehe, breite
+
+
+def berechne_groessere_durch_kleinere_seite_der_kleingaerten(hoehe: int, breite: int, spaltenanzahl: int, zeilenanzahl: int) -> float:
+    horizontale_seite = breite/spaltenanzahl
+    vertikale_seite = hoehe/zeilenanzahl
+    return max(horizontale_seite, vertikale_seite) / min(horizontale_seite, vertikale_seite)
+
+
+def berechne_moegliche_spalten_und_zeilenanzahlen(interessenten: int):
+    for spaltenanzahl in range(1, floor(1.1 * interessenten) + 1):
+        for zeilenanzahl in range(ceil(interessenten / spaltenanzahl), floor(1.1 * interessenten / spaltenanzahl) + 1):
+            yield spaltenanzahl, zeilenanzahl
+
+
+def berechne_optimale_spalten_und_zeilenanzahl(interessenten: int, hoehe: int, breite: int) -> tuple[int, int]:
+    return min(berechne_moegliche_spalten_und_zeilenanzahlen(interessenten), key = lambda dim: berechne_groessere_durch_kleinere_seite_der_kleingaerten(hoehe, breite, dim[0], dim[1]))
+
+
+def main(pfad: str) -> str:
+    interessenten, hoehe, breite = lies_eingabe(pfad)
+    spaltenanzahl, zeilenanzahl = berechne_optimale_spalten_und_zeilenanzahl(interessenten, hoehe, breite)
+    return f'Das Feld sollte gleichmäßig in {spaltenanzahl} Spalten und {zeilenanzahl} Zeilen aufgeteilt werden.'
+
+
+if __name__ == '__main__':
+    print(main(input('Pfad zur .txt Datei: ')))
+\end{lstlisting}
+
+\end{document}
+        

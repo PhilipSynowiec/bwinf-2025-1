@@ -1,0 +1,140 @@
+
+\documentclass[a4paper,10pt,ngerman]{scrartcl}
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[a4paper,margin=2.5cm,footskip=0.5cm]{geometry}
+
+\newcommand{\Aufgabe}{Junioraufgabe 2: Texthopsen}
+\newcommand{\TeamId}{00285}
+\newcommand{\TeamName}{Nebuchadnezzar}
+\newcommand{\Namen}{Philip Synowiec}
+
+\usepackage{scrlayer-scrpage, lastpage}
+\setkomafont{pageheadfoot}{\large\textrm}
+\lohead{\Aufgabe}
+\rohead{Team-ID: \TeamId}
+\cfoot*{\thepage{}/\pageref{LastPage}}
+
+\usepackage{titling}
+\setlength{\droptitle}{-1.0cm}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{
+  keywordstyle=\color{blue},commentstyle=\color{mygreen},
+  stringstyle=\color{mymauve},rulecolor=\color{black},
+  basicstyle=\footnotesize\ttfamily,numberstyle=\tiny\color{mygray},
+  captionpos=b,
+  keepspaces=true,
+  numbers=left, numbersep=5pt, showspaces=false,showstringspaces=true,
+  showtabs=false, stepnumber=1, tabsize=2, title=\lstname,
+  breaklines=true,
+  extendedchars=true,
+  literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {ß}{{\ss}}1
+}
+
+\usepackage{cleveref}
+
+\title{\textbf{\Huge\Aufgabe}}
+\author{\LARGE Team-ID: \LARGE \TeamId \\\\
+    \LARGE Team-Name: \LARGE \TeamName \\\\
+    \LARGE Bearbeiter dieser Aufgabe:\\
+    \LARGE \Namen\\\\}
+\date{\LARGE\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\vspace{0.5cm}
+
+\section{Lösungsidee}
+
+Dokumentiere hier deine Lösungsidee.
+
+\section{Umsetzung}
+
+Dokumentiere hier deine Umsetzung.
+
+\section{Beispiele}
+
+Wir führen das Programm für die folgenden Dateien aus.
+
+
+\subsection*{in/hopsen1.txt}
+\begin{lstlisting}
+Bela gewinnt beim Texthopsen.
+\end{lstlisting}
+
+\subsection*{in/hopsen2.txt}
+\begin{lstlisting}
+Bela gewinnt beim Texthopsen.
+\end{lstlisting}
+
+\subsection*{in/hopsen3.txt}
+\begin{lstlisting}
+Bela gewinnt beim Texthopsen.
+\end{lstlisting}
+
+\subsection*{in/hopsen4.txt}
+\begin{lstlisting}
+Amira gewinnt beim Texthopsen.
+\end{lstlisting}
+
+\subsection*{in/hopsen5.txt}
+\begin{lstlisting}
+Bela gewinnt beim Texthopsen.
+\end{lstlisting}
+
+\section{Quellcode}
+
+\lstset{language=Python}
+\begin{lstlisting}
+def lies_eingabe(pfad: str) -> str:
+    with open(pfad, 'r', encoding='utf-8') as f:
+        return f.read()
+
+
+def erstelle_zuordnung_von_zeichen_zu_sprungweite() -> dict[str, int]:
+    return {**{chr(i+97): i+1 for i in range(26)}, 'ä': 27, 'ö': 28, 'ü': 29, 'ß': 30}
+
+
+def wandle_text_in_kleinbuchstaben_um_und_filtere_relevante_zeichen(text: str, zeichen_zu_sprungweite: dict[str, int]) -> str:
+    return ''.join([zeichen for zeichen in text.lower() if zeichen in zeichen_zu_sprungweite.keys()])
+
+
+def berechne_zuganzahl_bis_zum_ende_aus_startposition(i: int, text: str, zeichen_zu_sprungweite: dict[str, int]) -> int:
+    zuganzahl = 0
+    while i < len(text):
+        i += zeichen_zu_sprungweite[text[i]]
+        zuganzahl += 1
+    return zuganzahl
+
+
+def ermittle_siegerin(text: str, sprungweiten: dict[str, int]) -> str:
+    return 'Amira' if berechne_zuganzahl_bis_zum_ende_aus_startposition(0, text, sprungweiten) > berechne_zuganzahl_bis_zum_ende_aus_startposition(1, text, sprungweiten) else "Bela"
+
+
+def main(pfad: str) -> str:
+    text = lies_eingabe(pfad)
+    zeichen_zu_sprungweite = erstelle_zuordnung_von_zeichen_zu_sprungweite()
+    text = wandle_text_in_kleinbuchstaben_um_und_filtere_relevante_zeichen(text, zeichen_zu_sprungweite)
+    siegerin = ermittle_siegerin(text, zeichen_zu_sprungweite)
+    return f'{siegerin} gewinnt beim Texthopsen.'
+
+
+if __name__ == '__main__':
+    print(main(input('Pfad zur .txt Datei: ')))
+\end{lstlisting}
+
+\end{document}
+        
